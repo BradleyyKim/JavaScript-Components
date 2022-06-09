@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>propagation test</title>
+  </head>
+  <body>
+    <h1>나의 todo list</h1>
+    <p class="p1">1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p class="p2">2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p class="p3">3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+    <script>
+      const txts = document.querySelectorAll("p");
+      const btns = document.querySelectorAll("button");
+
+      // 방법 1
+      // for (let i = 0; i < txts.length; i++) {
+      //   txts[i].addEventListener("click", (event) => {
+      //     alert(event.target.firstChild.textContent);
+      //   });
+      // }
+
+      // 방법 2
+      // txts.forEach((item) => {
+      //   item.addEventListener("click", (event) => {
+      //     alert(event.target.firstChild.textContent);
+      //   });
+      // });
+
+      // 빙밥 3
+      Array.prototype.forEach.call(txts, (item) => {
+        item.addEventListener("click", (event) => {
+          alert(event.target.textContent.slice(0, -2));
+        });
+      });
+
+      for (const item of btns) {
+        item.addEventListener("click", (event) => {
+          let result = confirm("삭제하시겠습니까?");
+          // Confirm 확인 -> True, 취소 -> False
+          event.stopPropagation();
+          if (result) {
+            item.parentElement.remove();
+          }
+        });
+      }
+      // 버블링이 일어나서 삭제 이벤트를 실행시키고 버블링이 일어나 부모요소를 버블링이 일어난다.
+      // 그래서 <방법3> 이벤트가 발생한다.
+      // call은 txts 가 forEach문을 가지고 있는 것처럼 사용할 수 있다.
+      // Array로 부터 forEach를 빌려온다.
+      // this.bind와 비슷한 개념.
+
+      // 함수화 한다면?
+
+      // function eventGenerator(pTag, btnTag) {
+      //   Array.prototype.forEach.call(pTag, (item) => {
+      //   item.addEventListener("click", (event) => {
+      //     alert(event.target.textContent.slice(0, -2));
+      //   });
+      // });
+
+      // for (const item of btnTag) {
+      //   item.addEventListener("click", (event) => {
+      //     let result = confirm("삭제하시겠습니까?");
+      //     // Confirm 확인 -> True, 취소 -> False
+      //     event.stopPropagation();
+      //     if (result) {
+      //       item.parentElement.remove();
+      //     }
+      //   });
+      // }
+      // }
+
+      // ====나의 똥망 코드 =====
+      // const p = document.querySelector("p");
+      // const p1 = document.querySelector(".p1");
+      // const p2 = document.querySelector(".p2");
+      // const p3 = document.querySelector(".p3");
+      // const btn = document.querySelector("button");
+
+      // function showAlert(p) {
+      //   alert(`${p.textContent}`);
+      //   btn.textContent.remove();
+      // }
+
+      // showAlert(p1);
+
+      // p1.addEventListener("click", alert("hello"));
+      // p2.addEventListener("click", window.alert(`${p2.textContent}`));
+      // p3.addEventListener("click", window.alert(`${p3.textContent}`));
+
+      // if (window.confirm("삭제하시겠습니까?")) {
+      //   window.alert("삭제되었습니다.");
+      // }
+
+      // const me = {
+      //   name: "김민영",
+      //   address: "서울특별시 관악구 봉천동",
+      //   phoneNum: "010-2942-1924",
+      //   Study: function () {
+      //     console.log("공부하자");
+      //   },
+      //   Eating: function (food) {
+      //     food.levelUp();
+      //   },
+      // };
+      // const food = {
+      //   level: 1,
+      //   levelUp: function () {
+      //     this.level++;
+      //   },
+      // };
+      // me.Eating(food);
+      // console.log(me.Eating(food.level));
+
+      // 실습 : 음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 로봇객체의 생성자를 만들어보세요.
+
+      // function Food(name) {
+      //   this.menu = name;
+      //   // this.menu = [...name];
+      //   // menu.push(`${this.name}`);
+      //   this.randomFoodMaker = function () {
+      //     console.log(`안녕하세요, 오늘의 추천 메뉴 ${this.name}은 어떠세요?`);
+      //   };
+      // }
+      // const menu1 = new Food(["탕수육", "짜장면"]);
+
+      const foods = ["몸국", "고사리해장국", "돔베국수", "뿔소라회"];
+      function FoodBot(foodNames) {
+        this.menu = foodNames;
+        this.sayMenu = function () {
+          console.log(this.menu[Math.floor(Math.random() * this.menu.length)]); // 0~ 3.99999 나옴
+        };
+      }
+      const seaFood = new FoodBot(foods);
+      const jejuFood = new FoodBot(foods);
+
+      function happyFood(name) {
+        this.name = name;
+      }
+      happyFood.prototype.sayMenu = function () {
+        console.log(`hello ${this.name}입니다.`);
+      };
+    </script>
+  </body>
+</html>

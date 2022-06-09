@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dropdown</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/dropdown.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="list">최애 프로그래밍 언어</button>
+      <div class="listBox">
+        <p class="option">Python</p>
+        <p class="option">Java</p>
+        <p class="option">JavaScript</p>
+        <p class="option">C#</p>
+        <p class="option">C/C++</p>
+      </div>
+    </div>
+    <script>
+      const list = document.querySelector(".list");
+      const listBox = document.querySelector(".listBox");
+      let toggle = false;
+      list.addEventListener("click", () => {
+        if (!toggle) {
+          list.classList.add("on");
+          listBox.classList.add("on");
+          toggle = true;
+        } else {
+          list.classList.remove("on");
+          listBox.classList.remove("on");
+          toggle = false;
+        }
+      });
+      listBox.addEventListener("click", (e) => {
+        if (e.target.classList.contains("option")) {
+          list.innerText = e.target.innerText;
+          list.classList.remove("on");
+          listBox.classList.remove("on");
+          toggle = false;
+        }
+      });
+    </script>
+  </body>
+</html>

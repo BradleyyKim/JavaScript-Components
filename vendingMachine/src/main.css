@@ -1,0 +1,265 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-color: #eae8fe;
+}
+button {
+  cursor: pointer;
+}
+/* wrapper, logo */
+.wrapper {
+  margin: 0 auto;
+  width: 748px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 67px;
+}
+.logo img {
+  width: 386px;
+}
+/* main */
+
+.article-vendingMachine {
+  display: flex;
+  gap: 28px;
+}
+.vendingMachine-left,
+.vendingMachine-right {
+  width: 360px;
+}
+.vendingMachine-left {
+  padding: 31px 27px;
+}
+
+/* left section */
+
+.vendingMachine-left {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.vendingMachine-left .item-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  position:relative;
+}
+
+.vendingMachine-left .item-list li {
+  width: 94px;
+  /* outline: 1px solid #333; */
+  border-radius: 10px;
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.13), 0px 0px 60px rgba(0, 0, 0, 0.066);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 9px;
+  line-height: 13px;
+  cursor: pointer;
+}
+
+.vendingMachine-left .item-list .items img {
+  width: 36px;
+  margin: 11px auto 6px;
+}
+
+.vendingMachine-left .item-list .items::after {
+  content: "1000원";
+  color: white;
+  background-color: #6327fe;
+  text-align: center;
+  width: 70px;
+  margin: 7px auto 9px;
+  /* padding: 5px 15px; */
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 5px 0;
+}
+/* SOLD OUT */
+
+.item-sold-out {
+  position:absolute;
+  height:134px;
+  left:106px;
+  background-color: #000;
+  opacity: 0.8;
+}
+.item-sold-out img { 
+  margin:41px auto;
+}
+
+.layers {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 94px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.money-left,
+.money-exchange,
+.money-input-text,
+.money-input-button,
+.item-get-list,
+.button-get {
+  font-size: 13px;
+}
+
+.money-exchange,
+.money-input-button,
+.button-get {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.13), 0px 0px 60px rgba(0, 0, 0, 0.066);
+}
+.money-exchange,
+.money-input-button {
+  background-color: transparent;
+  border-radius: 5px;
+}
+.button-get {
+  background-color: #6327fe;
+  color: #fff;
+  border-radius: 5px;
+}
+.money-left {
+  padding: 6px 10px;
+  background-color: #eae8fe;
+  border-radius: 5px;
+}
+.money-left span {
+  line-height: 20px;
+}
+.money-left .money-left-left {
+  float: left;
+}
+.money-left .money-left-right {
+  float: right;
+}
+.money-exchange {
+  padding: 6px 9px;
+}
+
+.money-input-text input {
+  width: 100%;
+  padding: 6px 0 6px 6px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+.money-input-text input::placeholder {
+  font-size: 13px;
+  color: #bdbdbd;
+}
+.item-get-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: #eae8fe;
+  height: 106px;
+  overflow: scroll;
+}
+.item-get-list .item-list-col {
+  margin-bottom: 6px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+}
+.item-get-list .item-list-col .items {
+  width: 18px;
+  float: left;
+}
+
+.item-get-list .item-list-col span {
+  font-size: 9px;
+  padding: 10px;
+  display: inline-block;
+}
+.item-get-list .item-list-col .click-minus {
+  float: right;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+/* right section */
+
+.money-having {
+  padding: 9px 27px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.money-having .money-having-bg {
+  background-color: #eae8fe;
+  overflow: hidden;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+.money-having .money-having-bg p {
+  line-height: 25px;
+}
+.money-having .money-left-left {
+  float: left;
+}
+.money-having .money-left-right {
+  float: right;
+}
+
+.item-result-box {
+  padding: 9px 27px 30px 27px;
+  width: 100%;
+  background-color: #fff;
+}
+.item-result-box .item-get-text {
+  text-align: center;
+  padding: 13px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.item-get-list-right {
+  height: 364px;
+}
+.item-result-box .money-total-cost {
+  text-align: end;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 6px 0;
+}
+
+@media screen and (max-device-width: 748px) {
+  body {
+    width: 360px;
+    margin: 0 auto;
+  }
+  .wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  .logo img {
+    width: 360px;
+  }
+  .article-vendingMachine {
+    flex-direction: column;
+    align-items: center;
+  }
+}

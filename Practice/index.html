@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <body>
+      <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function MinutesToHours() {
+        const [amount, setAmount] = React.useState();
+        const [inverted, setInverted] = React.useState(false);
+        const onChange = (event) => {
+          setAmount(event.target.value);
+        };
+        const reset = () => {
+          setAmount(0);
+        };
+        const onInvert = () => {
+          reset();
+          setInverted((current) => !current);
+        };
+        return (
+          <div>
+            <div>
+              <label htmlFor="minutes">Minutes</label>
+              <input
+                id="minutes"
+                value={inverted ? amount * 60 : amount}
+                placeholder="Minutes"
+                type="number"
+                onChange={onChange}
+                disabled={inverted}
+              />
+            </div>
+            <div>
+              <label htmlFor="Hours">Hours</label>
+              <input
+                id="Hours"
+                value={inverted ? amount : Math.round(amount / 60)}
+                placeholder="Hours"
+                type="number"
+                onChange={onChange}
+                disabled={!inverted}
+              />
+            </div>
+            <button onClick={reset}>reset</button>
+            <button onClick={onInvert}>{inverted ? "Turn Back!" : "Inverted!"}</button>
+          </div>
+        );
+      }
+      function KmToMiles() {
+        const [amount, setAmount] = React.useState();
+        const [inverted, setInverted] = React.useState(false);
+        const onChange = (event) => {
+          setAmount(event.target.value);
+        };
+        const reset = () => {
+          setAmount(0);
+        };
+        const onInvert = () => {
+          reset();
+          setInverted((current) => !current);
+        };
+        return (
+          <div>
+            <div>
+              <label htmlFor="Kilometers">Kilometer</label>
+              <input
+                id="Kilometers"
+                value={inverted ? (amount * 1.6).toFixed(1) : amount}
+                placeholder="Kilometers"
+                type="number"
+                onChange={onChange}
+                disabled={inverted}
+              />
+            </div>
+            <div>
+              <label htmlFor="Miles">Miles</label>
+              <input
+                id="Miles"
+                value={inverted ? amount : Math.round(amount / 1.6)}
+                placeholder="Miles"
+                type="number"
+                onChange={onChange}
+                disabled={!inverted}
+              />
+            </div>
+            <button onClick={reset}>reset</button>
+            <button onClick={onInvert}>{inverted ? "Turn Back!" : "Inverted!"}</button>
+          </div>
+        );
+      }
+      function App() {
+        const [index, setIndex] = React.useState("xx");
+        const onSelect = (e) => {
+          setIndex(e.target.value);
+          
+        };
+        console.log("render w/", index);
+        return (
+          <div>
+            <h1>Super Converter</h1>
+            <select value={index} onChange={onSelect}>
+              <option value="xx">Select Your units</option>
+              <option value="0">Minutes To Hours</option>
+              <option value="1">Kilometer To Miles</option>
+            </select>
+            <hr />
+            {index === "xx" ? "원하시는 변환기를 선택해주세요" : null}
+            {index === "0" ? <MinutesToHours /> : null}
+            {index === "1" ? <KmToMiles /> : null}
+          </div>
+        );
+      }
+      const root = document.getElementById("root");
+      ReactDOM.render(<App />, root);
+    </script>
+  </head>
+</html>

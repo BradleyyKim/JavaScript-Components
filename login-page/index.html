@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- login 페이지 -->
+    <div class="main">
+      <img class="weniv-color" src="./img/weniv-logo-color.png" alt="위니브" />
+      <p>위니브를 더 즐겁고 편리하게 이용하세요.</p>
+      <button class="modal-button">로그인</button>
+    </div>
+    <!-- modal 창 -->
+    <div id="modal">
+      <div class="login">
+        <header>
+          <h1>로그인 및 회원가입</h1>
+          <button class="exitBtn"><img src="./img/close.png" /></button>
+        </header>
+        <main>
+          <article class="formBox">
+            <h2>위니브에서 여러분의 궁금증을 해결하세요! :&#41;</h2>
+            <form class="loginForm">
+              <label class="idPw">
+                <input class="loginIdInput" type="text" placeholder="아이디" />
+                <div class="inputEmpty loginEt">아이디를 입력해 주세요.</div>
+                <input class="loginPwInput" type="password" placeholder="비밀번호" />
+                <div class="inputEmpty pwEt">비밀번호를 입력해 주세요.</div>
+                <div class="inputEmpty error">아이디 혹은 비밀번호가 일치하지 않습니다.</div>
+              </label>
+              <label class="checkBox">
+                <input type="checkbox" />
+                <div class="checkIcon"></div>
+                <p class="checkBoxTxt">로그인 상태 유지</p>
+              </label>
+              <button type="submit" class="login_btn">로그인</button>
+            </form>
+          </article>
+          <div class="signUp">
+            <a href="javascript:void(0);">회원가입</a>
+            <div class="stick"></div>
+            <a href="javascript:void(0);">아이디&#47;비밀번호 찾기</a>
+          </div>
+          <div class="line">
+            또는
+            <!-- <div class="line"></div> -->
+            <!-- <div class="line_txt">또는</div> -->
+            <!-- <div class="line"></div> -->
+          </div>
+          <ul class="address_link">
+            <li>
+              <a class="google_link" target="_blank" href="https://accounts.google.com/signin">
+                <img src="./img/icon_google.png" alt="google-icon" />구글 계정으로 로그인
+              </a>
+            </li>
+            <li>
+              <a class="facebook_link" target="_blank" href="https://www.facebook.com/login/">
+                <img src="./img/icon_facebook.png" alt="facebook-icon" />페이스북 계정으로 로그인
+              </a>
+            </li>
+            <li>
+              <a class="naver_link" target="_blank" href="https://nid.naver.com/">
+                <img src="./img/icon_naver.png" alt="naver-icon" />네이버 계정으로 로그인
+              </a>
+            </li>
+            <li>
+              <a class="kakao_link" target="_blank" href="https://accounts.kakao.com/">
+                <img src="./img/icon_kakao.png" alt="kakao-icon" />카카오톡 계정으로 로그인
+              </a>
+            </li>
+          </ul>
+        </main>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
+  </body>
+</html>

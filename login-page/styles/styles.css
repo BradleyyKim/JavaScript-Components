@@ -1,0 +1,260 @@
+/* default  */
+:root {
+  --login: #2e80ec;
+  --google: #afafaf;
+  --facebook: #86c5e9;
+  --naver: #57d261;
+  --kakao: #f4d575;
+  --gray: #6f6f6f;
+}
+
+/* Modal css start */
+
+.main {
+  width: 500px;
+  height: 240px;
+  margin: 300px auto 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.main .weniv-color {
+  margin-top: 30px;
+}
+.main p {
+  margin-top: 28px;
+}
+.main .modal-button {
+  width: 440px;
+  height: 60px;
+  font-size: 22px;
+  margin-top: 32px;
+  background-color: #2e80ec;
+  color: white;
+  border-radius: 5px;
+}
+#modal {
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.login {
+  border: 0.5px solid var(--gray);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 50vh;
+  margin: 100px auto;
+  background-color: white;
+}
+
+/* header */
+
+.login header {
+  max-width: 100%;
+  height: 50px;
+  border-bottom: 0.5px solid var(--gray);
+  position: relative;
+}
+
+.login header h1 {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  line-height: 50px;
+}
+.login header .exitBtn {
+  position: absolute;
+  right: 20px;
+  height: 18px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+/* main */
+
+main {
+  padding: 20px;
+}
+.formBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.formBox h2 {
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin: 0 0 20px;
+}
+.formBox .idPw input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  transition: 0.1s;
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
+}
+.formBox .idPw input.empty {
+  border: 2px solid #f4492e;
+}
+.formBox .idPw .inputEmpty {
+  color: #f4492e;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  padding-bottom: 10px;
+  display: none;
+}
+.formBox .idPw .inputEmpty.on {
+  display: block;
+}
+/* .formBox .idPw input::placeholder {
+  margin-left: 16px;
+} */
+.formBox .idPw input:nth-child(1) {
+  margin-bottom: 10px;
+}
+.formBox form .login_btn {
+  background-color: var(--login);
+  padding: 15px 0;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  line-height: 1;
+  width: 100%;
+}
+.formBox form .checkBox {
+  max-width: 130px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+.formBox form .checkBox input {
+  display: none;
+}
+.formBox form .checkBox input[type="checkbox"]:checked + .checkIcon {
+  background-image: url(../img/icon_check.png);
+}
+.formBox form .checkBox input[type="checkbox"]:checked + .checkIcon + p {
+  color: #2e80ec;
+}
+.formBox form .checkBox .checkIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  background: url(../img/icon_check_empty.png) no-repeat center;
+  cursor: pointer;
+}
+.formBox form .checkBox p {
+  cursor: pointer;
+  line-height: 1;
+}
+
+.signUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.signUp a {
+  color: var(--gray);
+}
+.signUp .stick {
+  width: 1.25px;
+  height: 12px;
+  text-align: center;
+  background-color: var(--gray);
+  margin: 0 10px;
+}
+
+/* .contour {
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+  padding-bottom: 8px;
+}
+
+.contour .line_txt {
+  padding: 0 1rem;
+  font-size: 14px;
+}
+.contour .line {
+  flex: 1;
+  height: 0.5px;
+  background-color: var(--gray);
+} */
+.line {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 30px 0 20px;
+  color: var(--gray);
+}
+
+.line::before,
+.line::after {
+  content: " ";
+  flex-grow: 1;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.4;
+}
+.address_link li {
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.address_link li a {
+  align-items: center;
+  margin-bottom: 8px;
+  position: relative;
+  width: 100%;
+  padding: 13px 0;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid;
+  font-size: 15px;
+  color: var(--gray);
+}
+.address_link li:last-child {
+  margin-bottom: 0;
+}
+.address_link a:last-child {
+  margin-bottom: 0;
+}
+
+.address_link a img {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.address_link .google_link {
+  border-color: var(--google);
+}
+.address_link .facebook_link {
+  border-color: var(--facebook);
+}
+.address_link .naver_link {
+  border-color: var(--naver);
+}
+.address_link .kakao_link {
+  border-color: var(--kakao);
+}

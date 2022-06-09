@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>123</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="screen"></div>
+      <div class="buttons">
+        <button class="redBtn">빨강</button>
+        <button class="greenBtn">초록</button>
+        <button class="blueBtn">파랑</button>
+      </div>
+    </div>
+    <script>
+      const screen = document.querySelector(".screen");
+      const redBtn = document.querySelector(".redBtn");
+      const greenBtn = document.querySelector(".greenBtn");
+      const blueBtn = document.querySelector(".blueBtn");
+
+      redBtn.addEventListener("click", () => {
+        screen.classList.toggle("red");
+        screen.classList.remove("green", "blue");
+        console.log("red");
+      });
+      greenBtn.addEventListener("click", () => {
+        screen.classList.toggle("green");
+        screen.classList.remove("red", "blue");
+        console.log("green");
+      });
+      blueBtn.addEventListener("click", () => {
+        screen.classList.toggle("blue");
+        screen.classList.remove("green", "red");
+        console.log("blue");
+      });
+      screen.addEventListener("click", () => {
+        screen.classList.toggle("hey");
+        screen.classList.remove("green", "red", "blue");
+        console.log("hey");
+      });
+    </script>
+  </body>
+</html>
