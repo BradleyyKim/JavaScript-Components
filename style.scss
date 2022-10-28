@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 10px 10px;
+  margin: 0;
   overflow: hidden;
   #root {
     width: 90vw;
@@ -14,17 +14,17 @@
       font-size: 40px;
     }
     .container {
-      display: flex;
-      flex-wrap: row wrap;
-      justify-content: space-evenly;
+      width: 1280px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
       .article {
         text-align: center;
-        line-height: 20vh;
+        line-height: 100px;
         text-decoration: none;
         font-size: 20px;
-        height: 100px;
-        width: 20vw;
-        height: 20vh;
         color: aliceblue;
         background-color: #555;
         border-radius: 15px;
