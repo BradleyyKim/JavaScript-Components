@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .container {
@@ -14,10 +14,10 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 500px;
   height: 800px;
   border: 1px solid lightsalmon;
@@ -25,12 +25,8 @@
 }
 
 .container .screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
   margin-top: 100px;
-  padding: 0 30px;
+  padding: 10px 30px;
   text-align: center;
   width: 100%;
   font-size: 50px;
@@ -42,8 +38,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 100%;
   margin-bottom: 100px;
 }
@@ -76,8 +72,6 @@
 }
 
 .container .lapsCount {
-  overflow-y: scroll;
-  height: 320px;
   width: 100%;
   padding: 5% 10%;
   list-style: none;

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -159,7 +158,7 @@ dt {
 }
 
 .wrapper .movie-list .main .movie-card .movie-card-content .movie-card-content-genre .movie-card-content-info .score::before {
-  content: url(./image/별점이미지.png);
+  content: url(./image/star.png);
   margin-right: 4px;
   vertical-align: -1px;
 }
@@ -210,7 +209,7 @@ dt {
 }
 
 .wrapper .movie-list .main .movie-card .movie-card-button .btn-design-right::before {
-  background-image: url(./image/아이콘_재생.png);
+  background-image: url(./image/play_button.png);
   background-size: 16px 16px;
   background-repeat: no-repeat;
   display: inline-block;

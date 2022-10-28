@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 10px 10px;
+  overflow: hidden;
+  #root {
+    width: 90vw;
+    height: 100vh;
+    vertical-align: middle;
+    margin: 0 auto;
+    h1 {
+      padding: 20px;
+      text-align: center;
+      font-size: 40px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: row wrap;
+      justify-content: space-evenly;
+      .article {
+        text-align: center;
+        line-height: 20vh;
+        text-decoration: none;
+        font-size: 20px;
+        height: 100px;
+        width: 20vw;
+        height: 20vh;
+        color: aliceblue;
+        background-color: #555;
+        border-radius: 15px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
